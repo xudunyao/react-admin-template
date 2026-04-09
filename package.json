@@ -8,9 +8,13 @@
     "build": "vite build",
     "lint:js": "eslint \"src\" --ext .js,.jsx",
     "lint:js:fix": "eslint \"src\" --ext .js,.jsx --fix",
+    "lint:css": "stylelint \"src/**/*.{css,scss}\"",
+    "lint:css:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky",
+    "commit": "git add . && lint-staged --concurrent false && cross-env SKIP_LINT_STAGED=1 cz"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.96.2",
@@ -19,16 +23,37 @@
     "sass": "^1.99.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
     "@eslint/js": "^9.39.4",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "commitizen": "^4.3.1",
+    "cross-env": "^10.1.0",
+    "cz-git": "^1.12.0",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "postcss": "^8.5.9",
+    "postcss-scss": "^4.0.9",
     "prettier": "^3.8.1",
+    "stylelint": "^17.6.0",
+    "stylelint-config-recess-order": "^7.7.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-order": "^8.1.1",
     "vite": "^8.0.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "cz-git": {
+    "disableEmoji": false
   }
 }
