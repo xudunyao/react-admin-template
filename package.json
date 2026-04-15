@@ -17,12 +17,17 @@
     "commit": "git add . && lint-staged --concurrent false && cross-env SKIP_LINT_STAGED=1 cz"
   },
   "dependencies": {
+    "@ant-design/icons": "^6.1.1",
+    "@reduxjs/toolkit": "^2.11.2",
     "@tanstack/react-query": "^5.96.2",
+    "antd": "^6.3.5",
     "axios": "^1.15.0",
     "js-cookie": "^3.0.5",
     "object-hash": "^3.0.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.14.0",
     "sass": "^1.99.0"
   },
   "devDependencies": {
